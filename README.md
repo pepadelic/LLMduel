@@ -10,6 +10,7 @@ An interactive web application where two configurable Large Language Models (LLM
 - **Flexible API Support**: Works with OpenAI and any OpenAI-compatible API endpoints
 - **Custom Personas**: Define distinct personalities and behavioral patterns for each model
 - **Topic-Driven Discussions**: Guide conversations with specific discussion topics
+- **Customizable System Prompts**: Fine-tune conversation flow and dynamics via `system_prompt.txt`
 
 ### User Experience
 - **Visual Distinction**: Clear color-coded display distinguishing between Model A and Model B
@@ -116,6 +117,7 @@ llm-conversation-app/
 ├── app.py                 # Main Streamlit application
 ├── llm_client.py          # LLM API client utility
 ├── conversation.py        # Conversation orchestration logic
+├── system_prompt.txt      # Customizable system prompt template
 ├── .env.example           # Environment variable template
 └── README.md              # This file
 ```
@@ -168,6 +170,59 @@ See `.env.example` for all available options. GUI values will override `.env` se
 | Temperature | Response randomness/creativity | 0.0-2.0 |
 | Turn Delay | Delay between turns in seconds | 0.0-5.0 |
 
+### Custom System Prompts
+
+The application supports custom system prompts via the `system_prompt.txt` file, allowing you to fine-tune conversation dynamics and flow. This powerful feature lets you:
+
+- **Control Conversation Style**: Define how models should interact (debate, collaboration, exploration)
+- **Set Response Guidelines**: Specify length, tone, and interaction patterns
+- **Influence Turn-Taking**: Guide how models build on each other's responses
+- **Customize Engagement**: Create specific conversation atmospheres
+
+#### Default System Prompt
+
+The included `system_prompt.txt` provides a comprehensive template that:
+- Encourages dynamic, thought-provoking dialogue
+- Prevents repetitive or summary-style responses
+- Promotes question-asking and idea-building
+- Maintains conversational momentum
+- Ensures responses stay focused and engaging
+
+#### Customizing the System Prompt
+
+To customize conversation behavior:
+
+1. **Edit `system_prompt.txt`** with your desired conversation guidelines
+2. **Use placeholders**: `{topic}` is automatically replaced with the discussion topic
+3. **Set response constraints**: Control length, style, and interaction patterns
+4. **Define conversation rules**: Specify how models should engage with each other
+
+#### Example Customizations
+
+**Debate Mode:**
+```
+You are in a structured debate about: {topic}
+Take a clear position and defend it with evidence.
+Challenge your opponent's arguments directly.
+Keep responses concise and focused.
+```
+
+**Collaborative Mode:**
+```
+You are collaborating on: {topic}
+Build on your partner's ideas constructively.
+Ask clarifying questions to deepen understanding.
+Work together to explore new possibilities.
+```
+
+**Exploration Mode:**
+```
+You are exploring: {topic}
+Ask "what if" questions to push boundaries.
+Connect ideas in unexpected ways.
+Challenge assumptions and conventional thinking.
+```
+
 ## Supported Models
 
 The application works with any OpenAI-compatible API. Common options include:
@@ -214,6 +269,7 @@ Human-readable transcript with:
 2. **Choose Focused Topics**: Specific topics lead to more coherent discussions
 3. **Adjust Temperature**: Higher values (0.8-1.0) for creative discussions, lower (0.3-0.5) for analytical
 4. **Set Appropriate Limits**: Start with 10-15 turns and adjust based on results
+5. **Customize System Prompts**: Edit `system_prompt.txt` to control conversation flow and style
 
 ### Performance Optimization
 
