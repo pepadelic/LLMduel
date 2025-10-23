@@ -95,7 +95,7 @@ MODEL_B_PERSONA=You are a creative thinker
 
 - Check that nicknames are set in `.env` or sidebar
 - Hard refresh your browser
-- Restart the app using `run.sh` or `run.bat`
+- Restart the app using `run.sh` 
 
 ## Features
 
