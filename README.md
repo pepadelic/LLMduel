@@ -1,4 +1,4 @@
-# LLM Conversation App
+# LLMduel
 
 An interactive web application where two configurable Large Language Models (LLMs) hold a conversation with each other in real time. Built with Streamlit, this app allows you to observe and analyze AI-to-AI dialogue on any topic you choose.
 
@@ -307,4 +307,3 @@ For issues, questions, or contributions, please refer to the project repository 
 ## Acknowledgments
 
 Built with Streamlit and designed to work with OpenAI-compatible language models.
-
