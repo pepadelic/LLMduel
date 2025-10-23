@@ -29,11 +29,6 @@ The startup scripts automatically clear cache to ensure you see the latest versi
 ./run.sh
 ```
 
-**On Windows:**
-```batch
-run.bat
-```
-
 ### Option 2: Manual Start
 
 ```bash
